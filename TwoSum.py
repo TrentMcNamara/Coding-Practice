@@ -1,8 +1,8 @@
 # Given an array of integers, return indices of the two numbers such that they add up to a specific target.
 # You may assume that each input would have exactly one solution, and you may not use the same element twice.
 
-# Brute Force Solution 
 class Solution:
+    #---Attempt 1: Brute Force Solution 
     def twoSum_brute(nums, target):
         solved = 0
         index_i = 0
@@ -19,10 +19,7 @@ class Solution:
         if (solved != 1):
             return 'no solution' 
     
-print(Solution.twoSum_brute([1,2,3,6,10], 3))
-
-# Attempt 2
-class Solution:
+    #---Attempt 2
     def twoSum_two(nums, target):
         solved = 0
         for i in nums:
@@ -31,5 +28,8 @@ class Solution:
                 solved = 1
         if (solved != 1):
             return 'no solution'
-    
-print(Solution.twoSum_two([1,2,3,6,10], 3))
+
+list = [1,2,3,6,10]
+target = 9    
+print(Solution.twoSum_brute(list, target))
+print(Solution.twoSum_two(list, target))
