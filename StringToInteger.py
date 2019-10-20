@@ -11,14 +11,27 @@
 class Solution:
     def myAtoi(str):
         nums = '0123456789'
-        alpha = 'abcdefghijklmnopqrstuvqxyz'
-        space = ' '
+        s = ''
+        neg = 1
         
         list = []
         for i in str:
             if i in nums :
                 list += i  
-        return list 
+
+        for i in list: 
+            s += i 
+        s = int(s)
         
-string = 'hello 4321'
+        iter = 0
+        for i in str:
+            if i == '-':
+                if str[iter+1] in list[0]:
+                    neg = -1
+            
+            iter += 1
+        
+        return neg*s
+        
+string = 'hello -4321'
 print(Solution.myAtoi(string))
